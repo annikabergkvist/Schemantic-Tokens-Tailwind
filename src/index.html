@@ -1,15 +1,25 @@
 <!DOCTYPE html>
-<html lang="en">
+<!-- Theme control lives on the <html> element via data-theme -->
+<!-- Set data-theme="dark" to preview dark mode -->
+<html lang="en" data-theme="light">
 <head>
+    <!-- Basic page setup -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pricing Plans — React App</title>
+
+    <!-- Google Fonts performance hint: connect early -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- Main typeface used in the app -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body class="bg-surface font-sans flex justify-center items-center min-h-screen p-5">
+    <!-- React mounts the full interface inside this container -->
     <div id="root"></div>
+
+    <!-- App entry script (loads React + components) -->
     <script type="module" src="/index.jsx"></script>
 </body>
 </html>
