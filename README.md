@@ -15,10 +15,10 @@ That file defines **design tokens** in three layers:
 | Layer | Purpose | Example |
 |-------|--------|--------|
 | **Primitive** | Raw palette values (hex, rgba) | `--color-cream-50`, `--color-ink` |
-| **Semantic** | Purpose-based names used across the app | `--color-surface`, `--color-text-primary`, `--color-card` |
-| **Component** | Tokens for specific UI elements | `--color-btn-primary`, `--color-btn-secondary` |
+| **Semantic** | Purpose-based names used across the app | `--color-surface`, `--color-text-primary`, `--color-action-primary`, `--color-on-action-primary` |
+| **Component** | Optional extra aliases for one UI piece (this project uses semantic tokens for buttons) | — |
 
-**Change a primitive** (e.g. `--color-cream-50`) and every semantic and component token that uses it updates everywhere — cards, buttons, text, backgrounds.
+**Change a primitive** (e.g. `--color-cream-50`) and every semantic token that uses it updates everywhere — cards, buttons, text, backgrounds.
 
 ### How tokens become classes
 
@@ -31,13 +31,13 @@ Examples:
 
 - `--color-card` → `bg-card` (card background)
 - `--color-text-primary` → `text-text-primary` (main text)
-- `--color-btn-primary` → `bg-btn-primary` (primary button)
+- `--color-action-primary` → `bg-action-primary` (primary actions, e.g. CTA buttons)
 
 So when you add or rename a token in `@theme` in **`src/index.css`**, those classes are available everywhere. No extra config.
 
 ### Quick reference for this project
 
-- **`src/index.css`** — Edit tokens here. Primitives at the top, then semantic, then component. Comments explain each block.
+- **`src/index.css`** — Edit tokens here. Primitives at the top, then semantic. Comments explain each block.
 - **`src/tailwind-reference.css`** — Reference only (not imported). Lists the Tailwind classes used in the app and which ones map to tokens, so you can see token → class at a glance.
 
 ### Running the app

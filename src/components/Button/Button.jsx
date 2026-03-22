@@ -3,12 +3,12 @@
 
 function Button({ label, variant = "secondary" }) {
     // Shared shape/spacing used by every button
-    const base = "mt-auto w-fit rounded-full px-8 py-3.5 text-base font-medium cursor-pointer border-none transition-colors duration-200";
+    const base = "mt-auto w-full rounded-full px-4 py-4 text-base font-medium cursor-pointer border-none transition-colors duration-200";
 
-    // Visual themes linked to component tokens in index.css
+    // Visual themes use semantic action tokens from index.css
     const variants = {
-        secondary: "bg-btn-secondary text-text-primary hover:bg-btn-secondary-hover",
-        primary:   "bg-btn-primary text-btn-primary-text hover:bg-btn-primary-hover",
+        secondary: "bg-action-secondary text-text-primary hover:bg-action-secondary-hover hover:text-ink",
+        primary:   "bg-action-primary text-on-action-primary hover:bg-action-primary-hover",
     };
 
     return (

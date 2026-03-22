@@ -26,6 +26,8 @@
 /* ── SIZING ── */
 
 .w-fit         { width: fit-content; }
+.w-fill        { width: 100%; }
+
 .w-80          { width: 20rem; }             /* 320px */
 .min-h-screen  { min-height: 100vh; }
 .min-h-\[380px\] { min-height: 380px; }     /* custom value via square brackets */
@@ -72,8 +74,8 @@
 .bg-surface    { background-color: var(--color-surface); }    /* → TOKEN: page background */
 .bg-card       { background-color: var(--color-card); }       /* → TOKEN: card background */
 .bg-white      { background-color: #fff; }
-.bg-btn-secondary { background-color: var(--color-btn-secondary); } /* → TOKEN: default button */
-.bg-btn-primary   { background-color: var(--color-btn-primary); }   /* → TOKEN: CTA button */
+.bg-action-secondary { background-color: var(--color-action-secondary); } /* → TOKEN: secondary actions */
+.bg-action-primary   { background-color: var(--color-action-primary); }     /* → TOKEN: primary actions */
 
 
 /* ── COLOURS (text) ── */
@@ -81,14 +83,17 @@
 .text-text-primary   { color: var(--color-text-primary); }    /* → TOKEN: headings, body */
 .text-text-muted     { color: var(--color-text-muted); }      /* → TOKEN: secondary info */
 .text-text-secondary { color: var(--color-text-secondary); }   /* → TOKEN: subtle UI text */
+.text-on-action-primary { color: var(--color-on-action-primary); } /* → TOKEN: text on primary action */
+.text-ink            { color: var(--color-ink); }              /* → TOKEN: primitive ink */
 .text-white          { color: #fff; }
 
 
 /* ── HOVER STATES ── */
 /* Tailwind prefix "hover:" applies the style only on mouse hover */
 
-.hover\:bg-btn-secondary-hover:hover { background-color: var(--color-btn-secondary-hover); } /* → TOKEN */
-.hover\:bg-btn-primary-hover:hover   { background-color: var(--color-btn-primary-hover); }   /* → TOKEN */
+.hover\:bg-action-secondary-hover:hover { background-color: var(--color-action-secondary-hover); } /* → TOKEN */
+.hover\:bg-action-primary-hover:hover   { background-color: var(--color-action-primary-hover); }   /* → TOKEN */
+.hover\:text-ink:hover                  { color: var(--color-ink); } /* → TOKEN: darker text on secondary hover */
 
 
 /* ── BORDERS & CORNERS ── */
