@@ -4,10 +4,19 @@
  * --color-{name} => bg-{name}, text-{name}, border-{name}
  * --font-{name}  => font-{name}
  *
- * Token levels:
- * 1) Primitive: raw palette
- * 2) Semantic: purpose-based aliases
- * 3) Component: element-specific aliases
+ * Token levels (each builds on the one above):
+ *
+ * 1) Primitive — Raw values (hex, rgba) named by what they are (e.g. gray-900,
+ *    cream-50), not by job. They are the single source of truth for color numbers;
+ *    components usually avoid using them directly so swapping the palette stays easy.
+ *
+ * 2) Semantic — Aliases that describe UI *meaning*: surface, text-primary,
+ *    action-primary. They point at primitives (via var(...)). Same name can map to
+ *    different primitives per theme (light/dark), so screens stay readable without
+ *    hard-coding colors everywhere.
+ *
+ * 3) Component — Optional aliases scoped to one UI piece (e.g. a specific card).
+ *    This project styles buttons with semantic action tokens instead.
  *
  * Theme switch:
  * 1) Light (default): <html data-theme="light">
@@ -19,7 +28,7 @@
 
 @theme {
 
-  /* Primitives: base palette values (foundation only) */
+  /* Primitives: foundation palette — literal colors only, no UI role in the name */
   --color-gray-900: #111;
   --color-gray-700: #333;
   --color-gray-500: #666;
@@ -30,7 +39,7 @@
   --color-ink:       #26251e;
   --color-ink-50:    rgba(38, 37, 30, 0.5);
 
-  /* Semantic: meaningful UI roles used across screens */
+  /* Semantic: role-based tokens — “what it does” in the UI; theme swaps remap these */
   --color-surface:        var(--color-cream-50);
   --color-card:           var(--color-cream-100);
   --color-text-primary:   var(--color-ink);
@@ -38,15 +47,9 @@
   --color-text-secondary: var(--color-gray-500);
   --color-action-primary:          var(--color-gray-900);
   --color-action-primary-hover:    var(--color-gray-700);
+  --color-on-action-primary:       #ffffff;
   --color-action-secondary:        var(--color-cream-200);
   --color-action-secondary-hover:  var(--color-cream-300);
-
-  /* Component: token aliases tied to specific elements (buttons, etc.) */
-  --color-btn-primary:         var(--color-action-primary);
-  --color-btn-primary-hover:   var(--color-action-primary-hover);
-  --color-btn-primary-text:    #ffffff;
-  --color-btn-secondary:       var(--color-action-secondary);
-  --color-btn-secondary-hover: var(--color-action-secondary-hover);
 
   /* Typography: shared font family tokens */
   --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
@@ -61,7 +64,8 @@
   --color-text-secondary: var(--color-cream-200);
   --color-action-primary: var(--color-cream-50);
   --color-action-primary-hover: var(--color-cream-200);
-  --color-btn-primary-text: var(--color-gray-900);
-  --color-action-secondary: var(--color-gray-700);
-  --color-action-secondary-hover: var(--color-gray-500);
+  --color-on-action-primary: var(--color-gray-900);
+  /* Lighter than --color-card (gray-700) so secondary buttons don’t vanish on cards */
+  --color-action-secondary: var(--color-gray-500);
+  --color-action-secondary-hover: var(--color-cream-200);
 }

@@ -65,7 +65,7 @@ function Pricing() {
             <button
                 onClick={toggleTheme}
                 type="button"
-                className="fixed top-4 right-4 text-sm bg-btn-secondary text-text-primary hover:bg-btn-secondary-hover rounded-full px-4 py-2 transition-colors duration-200"
+                className="fixed top-4 right-4 text-sm bg-action-secondary text-text-primary hover:bg-action-secondary-hover hover:text-ink rounded-full px-4 py-2 transition-colors duration-200"
             >
                 {theme === 'light' ? 'Switch to Dark' : 'Switch to Light'}
             </button>
